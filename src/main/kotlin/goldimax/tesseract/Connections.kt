@@ -11,7 +11,9 @@ data class Connection(
 object Connections {
     val connect = run {
         val conf =
-            File("connections").readLines()
+            File("connections").apply {
+                if (!exists()) createNewFile()
+            } .readLines()
         val raw = conf.filter { it.isNotBlank() }
             .map { it.split(",").map { it.trim().toLong() } }
         raw.map { Connection(it[0], it[1], it[2]) }.toMutableList()

@@ -8,6 +8,7 @@
 
 ### 使用
 
+- 在 Telegram 找 BotFather 机器人选择关闭 TG 机器人的 Group Privacy Mode 
 - 从 Release 页面下载最新版 Jar
 - 上传到服务器上
 - 在服务器上安装 Java 运行时环境
@@ -31,8 +32,6 @@
 ### TG 指令
 
 注：指令后都不能加 @<Bot名字>
-
-TG Bot 一定要在 Bot Father 里关掉 Group Privacy
 
 - `/rainbow` 查询 Bot 状态
 - `/connect <qq群号>` 把本群和群号为 `<qq群号>` 的 QQ 群连结
