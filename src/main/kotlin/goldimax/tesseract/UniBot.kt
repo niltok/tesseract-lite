@@ -18,7 +18,7 @@ object UniBot {
     val tgsu = env[1].trim().toLong()
 
     val qq = BotFactory.newBot(env[2].trim().toLong(), env[3])
-    val qqsu = env[5].trim().toLong()
+    val qqsu = env[4].trim().toLong()
     val tg = tgBot.createPolling("", tgToken)
     val tgListener = mutableListOf<suspend (Message) -> Unit>()
 
