@@ -25,8 +25,7 @@ object TgOther {
             You are${if (SUManager.isSuperuser(TGUser(msg.from!!.id.toLong()))) "" else " not"} superuser.
             Here is ${msg.chat.id}.
             Build: $version.
-            """.trimIndent()
-                , parseMode = "MarkdownV2")
+            """.trimIndent())
             }
 
             onCommand("/connect") { msg, cmd ->
