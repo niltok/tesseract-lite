@@ -68,9 +68,9 @@ object Forward {
 
             val caption = String.format("<b>%s</b>: %s", sender.displayName(), parseMsg(message))
             when (imgs.size) {
-                0 -> UniBot.tg.sendMessage(tGroup, caption, replyTo = reply)
+                0 -> UniBot.tg.sendMessage(tGroup, caption, replyTo = reply, parseMode = "html")
                     .whenComplete { t, _ -> History.insert(source, t) }
-                1 -> UniBot.tg.sendPhoto(tGroup, imgs.first(), caption, replyTo = reply)
+                1 -> UniBot.tg.sendPhoto(tGroup, imgs.first(), caption, replyTo = reply, parseMode = "html")
                     .whenComplete { t, _ -> History.insert(source, t) }
                 else -> UniBot.tg.sendMediaGroup(tGroup, imgs.map {
                         UniBot.tg.mediaPhoto(it, caption =  caption, parseMode = "html") }, replyTo = reply)
