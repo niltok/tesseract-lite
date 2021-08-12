@@ -22,8 +22,8 @@ object TgOther {
                     """
             Copy. I am online.
             You are ${msg.from!!.id}.
+            You are${if (SUManager.isSuperuser(TGUser(msg.from!!.id.toLong()))) "" else " not"} superuser.
             Here is ${msg.chat.id}.
-            Superuser is [${UniBot.tgsu}](tg://user?id=${UniBot.tgsu})
             Build: $version.
             """.trimIndent()
                 , parseMode = "MarkdownV2")
