@@ -34,6 +34,8 @@ object Connections {
     }
     fun isDrive(tg: Long)  = connect.find { it.tg == tg }?.drive
     fun save() {
-        File("connections").writeText(connect.joinToString("\n") { "${it.qq},${it.tg}" })
+        File("connections").writeText(connect.joinToString("\n") {
+            "${it.drive},${it.qq},${it.tg}"
+        })
     }
 }
